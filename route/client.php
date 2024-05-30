@@ -6,3 +6,6 @@ $router->get('/', function () {
 $router->get('/about', function () {
     echo "Trang Giới thiệu";
 });
+$router->get('/hehe', function () {
+    echo "Trang hehe";
+});
