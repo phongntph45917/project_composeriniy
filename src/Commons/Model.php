@@ -36,7 +36,7 @@ class Model
             ->orderBy('id', 'desc')
             ->fetchAllAssociative();
     }
-
+    
     public function count()
     {
         return $this->queryBuilder
@@ -78,6 +78,7 @@ class Model
             $query = $this->queryBuilder->insert($this->tableName);
 
             $index = 0;
+            //[key=>value]
             foreach ($data as $key => $value) {
                 $query->setValue($key, '?')->setParameter($index, $value);
 

@@ -3,8 +3,12 @@
     "autoload": {
         "psr-4": {
             "Ph45917\\PhpOop\\": "src/"
-        }
+        },
+        "files": [
+            "helper.php"
+        ]
     },
+
     "authors": [
         {
             "name": "phongntph45917",
