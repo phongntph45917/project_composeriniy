@@ -33,17 +33,26 @@
 
             @foreach ($users as $user)
                 <tr>
-                    <td><?= $user['id'] ?></td>
+                    <td>
+                        <?= $user['id'] ?>
+                    </td>
                     <td></td>
-                    <td><?= $user['name'] ?></td>
-                    <td><?= $user['email'] ?></td>
-                    <td><?= $user['created_at'] ?></td>
-                    <td><?= $user['updated_at'] ?></td>
+                    <td>
+                        <?= $user['name'] ?>
+                    </td>
+                    <td>
+                        <?= $user['email'] ?>
+                    </td>
+                    <td>
+                        <?= $user['created_at'] ?>
+                    </td>
+                    <td>
+                        <?= $user['updated_at'] ?>
+                    </td>
                     <td>
 
-                        <form action="{{ url('admin/users/' . $user['id'] .  '/delete') }}" method="POST">
-                            <button class="btn btn-danger"
-                                onclick="return confirm('Chắc chắn xóa không?')" 
+                        <form action="{{ url('admin/users/' . $user['id'] . '/delete') }}" method="POST">
+                            <button class="btn btn-danger" onclick="return confirm('Chắc chắn xóa không?')"
                                 type="submit">Delete</button>
                         </form>
 
