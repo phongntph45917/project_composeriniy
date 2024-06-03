@@ -15,28 +15,6 @@ class UserController extends Controller
         $this->user = new User();
     }
 
-    // public function index()
-    // {
-    //     try {
-    //         // for ($i=0; $i < 10; $i++) { 
-    //         //     $this->user->insert([
-    //         //         'name' => "Nguyễn Thanh $i",
-    //         //         'email' => "a$i@gmail.com",
-    //         //         'password' => password_hash('12345', PASSWORD_DEFAULT)
-    //         //     ]);
-    //         // }
-    //         // die;
-
-
-    //         $users = $this->user->paginate($_GET['page'] ?? 1);
-
-    //         Helper::debug($users[1]);
-
-    //     } catch (\Throwable $th) {
-    //         Helper::debug($th->getMessage());
-    //     }
-    // }
-
     public function index()
     {
         [$users, $totalPage] = $this->user->paginate($_GET['page'] ?? 1);

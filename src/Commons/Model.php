@@ -36,7 +36,7 @@ class Model
             ->orderBy('id', 'desc')
             ->fetchAllAssociative();
     }
-    
+
     public function count()
     {
         return $this->queryBuilder
@@ -47,6 +47,10 @@ class Model
 
     public function paginate($page = 1, $perPage = 5)
     {
+        $queryBuilder = clone ($this->queryBuilder);
+
+        $totalPage = ceil($this->count() / $perPage);
+
         $offset = $perPage * ($page - 1);
 
         $data = $this->queryBuilder
@@ -57,7 +61,6 @@ class Model
             ->orderBy('id', 'desc')
             ->fetchAllAssociative();
 
-        $totalPage = ceil($this->count() / $perPage);
 
         return [$data, $totalPage];
     }
