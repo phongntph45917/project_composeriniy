@@ -2,34 +2,43 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta charset="utf-8">
     <title>@yield('title')</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @include('layouts.partials.head');
 </head>
 
 <body>
-    <div class="container">
-        <nav class="mt-5">
-            <a href="{{ url('admin') }}">Dashboard</a>
-            <a href="{{ url('admin/products') }}">Quản lý Sản phẩm</a>
-            <a href="{{ url('admin/users') }}">Quản lý người dùng</a>
-        </nav>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
 
-        <h1 class="mt-5 mb-3 text-center">@yield('title')</h1>
-        
-        <div class="row">
+
+
+        @include('layouts.partials.nav');
+
+
+        <!-- Content Start -->
+        <div class="content">
+            @include('layouts.partials.topbar')
+
+
             @yield('content')
+
+
+            @include('layouts.partials.footer')
         </div>
+        <!-- Content End -->
+
+        @include('layouts.partials.script');
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+
 
 </body>
 
 </html>
+s

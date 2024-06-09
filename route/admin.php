@@ -15,7 +15,7 @@ use Ph45917\PhpOop\Controllers\Admin\ProductController;
 use Ph45917\PhpOop\Controllers\Admin\UserController;
 
 $router->mount('/admin', function () use ($router) {
-
+    $router->get('/', DashboardController::class . '@dashboard');
     // CRUD USER
     $router->mount('/users', function () use ($router) {
         $router->get('/', UserController::class . '@index');
