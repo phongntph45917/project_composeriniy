@@ -16,6 +16,7 @@
 use Ph45917\PhpOop\Controllers\Client\AboutController;
 use Ph45917\PhpOop\Controllers\Client\ContactController;
 use Ph45917\PhpOop\Controllers\Client\HomeController;
+use Ph45917\PhpOop\Controllers\Client\LoginController;
 use Ph45917\PhpOop\Controllers\Client\ProductController;
 
 $router->get( '/',                  HomeController::class       . '@index');
@@ -26,3 +27,7 @@ $router->post( '/contact/store',    ContactController::class    . '@store');
 
 $router->get( '/products',          ProductController::class    . '@index');
 $router->get( '/products/{id}',     ProductController::class    . '@detail');
+
+$router->get( '/login',           LoginController::class    . '@showFormLogin');
+$router->post( '/handle-login',    LoginController::class    . '@login');
+$router->post( '/logout',    LoginController::class    . '@logout');

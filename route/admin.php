@@ -14,6 +14,14 @@ use Ph45917\PhpOop\Controllers\Admin\DashboardController;
 use Ph45917\PhpOop\Controllers\Admin\ProductController;
 use Ph45917\PhpOop\Controllers\Admin\UserController;
 
+$router->before('GET|POST', '/admin/*.*', function() {
+    if (! isset($_SESSION['user'])) {
+        header('location: ' . url('login') );
+        exit();
+    }
+});
+
+
 $router->mount('/admin', function () use ($router) {
     $router->get('/', DashboardController::class . '@dashboard');
     // CRUD USER
